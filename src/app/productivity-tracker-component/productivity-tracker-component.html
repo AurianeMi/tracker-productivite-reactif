@@ -1,0 +1,34 @@
+
+<div class="tracker">
+  <h1>Suivi de productivité</h1>
+
+  <p class="progress">
+    Tâches terminées :
+    <strong>{{ completedTasks() }} / 5</strong>
+  </p>
+
+  <div class="progress-bar">
+    <div
+      class="progress-fill"
+      [style.width.%]="progressPercentage() > 100 ? 100 : progressPercentage()">
+    </div>
+  </div>
+
+  <p class="percentage">{{ progressPercentage() }} %</p>
+
+  <p class="message">{{ message() }}</p>
+
+  <div class="actions">
+    <button
+      (click)="addTask()"
+      [disabled]="completedTasks() >= 5">
+      +1 Tâche complétée
+    </button>
+
+    <button
+      class="reset"
+      (click)="resetTasks()">
+      Réinitialiser
+    </button>
+  </div>
+</div>

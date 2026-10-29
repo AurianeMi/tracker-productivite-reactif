@@ -1,0 +1,167 @@
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 40px 18px;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #493225;
+  background:
+    radial-gradient(ellipse at top left, #f6d9ae 0%, transparent 45%),
+    linear-gradient(145deg, #fff7e8, #edcfaa);
+}
+
+/* Carte principale */
+.tracker {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 32px;
+  text-align: center;
+  background: rgba(255, 250, 240, 0.96);
+  border: 1px solid #e2bc8c;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(104, 58, 30, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bande décorative */
+.tracker::before {
+  content: "🍂 🍁 🍂";
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  letter-spacing: 8px;
+}
+
+h1 {
+  margin: 0 0 24px;
+  color: #8b3f27;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.progress {
+  color: #76523b;
+  font-size: 1.05rem;
+}
+
+.progress strong {
+  color: #a54f2b;
+}
+
+/* Barre de progression */
+.progress-bar {
+  height: 16px;
+  margin: 24px 0 12px;
+  overflow: hidden;
+  background: #eadbc6;
+  border: 1px solid #dfc5a4;
+  border-radius: 999px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d98a38, #b74d2b);
+  border-radius: inherit;
+  transition: width 0.4s ease;
+}
+
+/* Pourcentage */
+.percentage {
+  margin: 12px 0;
+  color: #a64b2a;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+/* Message de motivation */
+.message {
+  min-height: 48px;
+  margin: 18px 0;
+  padding: 14px;
+  color: #795139;
+  background: #f9ead4;
+  border-radius: 12px;
+  line-height: 1.5;
+}
+
+/* Boutons */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+button {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #a64b2a;
+  color: #fff8ec;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #74331f;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #bd6538;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #74331f;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #74331f;
+}
+
+button:disabled {
+  background: #c9b6a1;
+  color: #f7eee3;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Bouton de réinitialisation */
+button.reset {
+  background: #e8d5bb;
+  color: #65442f;
+  box-shadow: 0 4px 0 #c8aa87;
+}
+
+button.reset:hover:not(:disabled) {
+  background: #ddc09c;
+  box-shadow: 0 6px 0 #c8aa87;
+}
+
+/* Adaptation mobile */
+@media (max-width: 520px) {
+  :host {
+    padding: 20px 12px;
+  }
+
+  .tracker {
+    margin: 12px auto;
+    padding: 24px 18px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .percentage {
+    font-size: 2.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
